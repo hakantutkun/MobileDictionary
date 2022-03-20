@@ -1,28 +1,41 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace MobileDictionary
 {
     public partial class App : Application
     {
+        #region Constructor
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public App()
         {
             InitializeComponent();
 
+            // Set the main page
             MainPage = new MainPage();
         }
 
-        protected override void OnStart()
-        {
-        }
+        #endregion
 
-        protected override void OnSleep()
-        {
-        }
+        #region Methods
 
-        protected override void OnResume()
-        {
-        }
+        /// <summary>
+        /// On Start
+        /// </summary>
+        protected override void OnStart() { }
+
+        /// <summary>
+        /// On Sleep
+        /// </summary>
+        protected override void OnSleep() { }
+
+        /// <summary>
+        /// On Resume
+        /// </summary>
+        protected override void OnResume() { }
+
+        #endregion
     }
 }
