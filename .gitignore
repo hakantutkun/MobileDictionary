@@ -1,0 +1,11 @@
+.vs
+MobileDictionary/MobileDictionary/MobileDictionary/bin
+MobileDictionary/MobileDictionary/MobileDictionary/obj
+MobileDictionary/MobileDictionary/MobileDictionary.Android/bin
+MobileDictionary/MobileDictionary/MobileDictionary.Android/obj
+MobileDictionary/MobileDictionary/MobileDictionary.iOS/bin
+MobileDictionary/MobileDictionary/MobileDictionary.iOS/obj
+MobileDictionary/MobileDictionary.DataAccess/bin
+MobileDictionary/MobileDictionary.DataAccess/obj
+MobileDictionary/MobileDictionary.Entities/bin
+MobileDictionary/MobileDictionary.Entities/obj
