@@ -2,13 +2,60 @@
 <ContentPage
     x:Class="MobileDictionary.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:MobileDictionary.Views"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Style="{StaticResource DefaultPageStyle}">
 
-    <Grid>
-        <Label
-            HorizontalOptions="Center"
-            Text="Mingitav Sözlük"
-            VerticalOptions="Center" />
+    <!--  Main Grid  -->
+    <Grid Margin="0">
+
+        <!--  Main TabView  -->
+        <xct:TabView x:Name="MainTabView" Style="{StaticResource TabViewStyle}">
+
+            <!--  Background of Tab Strip  -->
+            <xct:TabView.TabStripBackgroundView>
+                <BoxView Style="{StaticResource TabStripBackgroundStyle}" />
+            </xct:TabView.TabStripBackgroundView>
+
+            <!--  History Tab Item  -->
+            <xct:TabViewItem
+                x:Name="HistoryTabItem"
+                Icon="{StaticResource FontAwesomeHistoryIcon}"
+                Style="{StaticResource DefaultTabViewItemStyle}"
+                Text="Geçmiş">
+
+                <!--  History Tab Content  -->
+                <views:HistoryView />
+
+            </xct:TabViewItem>
+
+            <!--  Search Tab Item  -->
+            <xct:TabViewItem
+                x:Name="SearchTabItem"
+                Icon="{StaticResource FontAwesomeSearchIcon}"
+                IsSelected="True"
+                Style="{StaticResource DefaultTabViewItemStyle}"
+                Text="Ara">
+
+                <!--  Search Tab Content  -->
+                <views:SearchView />
+
+            </xct:TabViewItem>
+
+            <!--  Favourites Tab Item  -->
+            <xct:TabViewItem
+                x:Name="FavouritesTabItem"
+                Icon="{StaticResource FontAwesomeBookmarkIcon}"
+                Style="{StaticResource DefaultTabViewItemStyle}"
+                Text="Kelimelerim">
+
+                <!--  Tab Content  -->
+                <views:FavouritesView />
+            </xct:TabViewItem>
+
+        </xct:TabView>
+
     </Grid>
 
 </ContentPage>

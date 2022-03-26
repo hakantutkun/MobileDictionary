@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--#region Fonts-->
+
+    <!--#region Pre-Defined FontAwesome Icons-->
+
+    <system:String x:Key="FontAwesomeSearchIcon">&#xf002;</system:String>
+    <system:String x:Key="FontAwesomeHistoryIcon">&#xf017;</system:String>
+    <system:String x:Key="FontAwesomeBookmarkIcon">&#xf02e;</system:String>
+    <system:String x:Key="FontAwesomeCopyIcon">&#xf0c5;</system:String>
+    <system:String x:Key="FontAwesomeSoundIcon">&#xf028;</system:String>
+    <system:String x:Key="FontAwesomeShareIcon">&#xf1e0;</system:String>
+    <system:String x:Key="FontAwesomeCloseIcon">&#xf00d;</system:String>
+    <system:String x:Key="FontAwesomeBackIcon">&#xf104;</system:String>
+    <system:String x:Key="FontAwesomeBulletIcon">&#xf138;</system:String>
+    <system:String x:Key="FontAwesomeCogUserIcon">&#xf4fe;</system:String>
+    <system:String x:Key="FontAwesomeLightIcon">&#xf185;</system:String>
+    <system:String x:Key="FontAwesomeDarkIcon">&#xf186;</system:String>
+    <system:String x:Key="FontAwesomeRefreshIcon">&#xf021;</system:String>
+    <system:String x:Key="FontAwesomeListIcon">&#xf03a;</system:String>
+    <system:String x:Key="FontAwesomeSettingsIcon">&#xf013;</system:String>
+    <system:String x:Key="FontAwesomeBarsIcon">&#xf0c9;</system:String>
+
+    <!--#endregion-->
+
+    <!--#endregion-->
+
+</ResourceDictionary>

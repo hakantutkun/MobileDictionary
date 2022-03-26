@@ -1,8 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileDictionary.App">
+<Application
+    x:Class="MobileDictionary.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
 
+                <!--  Color Resources  -->
+                <ResourceDictionary Source="Styles/Colors.xaml" />
+
+                <!--  Font Resources  -->
+                <ResourceDictionary Source="Styles/Fonts.xaml" />
+
+                <!--  Tab Resources  -->
+                <ResourceDictionary Source="Styles/Tabs.xaml" />
+
+                <!--  Tab Resources  -->
+                <ResourceDictionary Source="Styles/Pages.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

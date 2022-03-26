@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="MobileDictionary.Views.SearchView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!--  Main Grid  -->
+    <Grid Margin="0,30,0,0" RowDefinitions="Auto,Auto,*">
+
+        <!--  Title Bar Grid  -->
+        <Grid ColumnDefinitions="*,Auto" VerticalOptions="Start">
+
+            <StackLayout Spacing="0">
+                <Label
+                    Grid.Column="0"
+                    Margin="20,20,0,0"
+                    FontFamily="PoppinsSemiBold"
+                    FontSize="24"
+                    Text="Mingi Tav Sözlük"
+                    TextColor="{StaticResource TextColorLight}" />
+                <Label
+                    Margin="20,0"
+                    FontFamily="PoppinsLight"
+                    FontSize="13"
+                    Text="13259 kelime arasından arama yapın..."
+                    TextColor="{StaticResource TextColorLight}"
+                    VerticalOptions="Start"
+                    VerticalTextAlignment="Start" />
+            </StackLayout>
+
+            <Label
+                Grid.Column="1"
+                Margin="20,10,20,0"
+                FontFamily="FontAwesomeSolid"
+                FontSize="25"
+                HorizontalOptions="Center"
+                Text="{StaticResource FontAwesomeBarsIcon}"
+                TextColor="{StaticResource ButtonColorLight}"
+                VerticalOptions="CenterAndExpand" />
+
+        </Grid>
+
+        <!--  Search Bar Frame  -->
+        <Frame
+            Grid.Row="1"
+            Margin="20,10"
+            Padding="0"
+            BackgroundColor="Transparent"
+            BorderColor="#c5d9d9"
+            CornerRadius="18"
+            HasShadow="False"
+            HeightRequest="50">
+
+            <Grid ColumnDefinitions="Auto,*,Auto">
+
+
+                <Label
+                    FontFamily="FontAwesomeRegular"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="{StaticResource FontAwesomeCopyIcon}"
+                    TextColor="{StaticResource ButtonColorLight}"
+                    VerticalOptions="Center"
+                    WidthRequest="50" />
+
+                <Label
+                    Grid.Column="2"
+                    FontFamily="FontAwesomeSolid"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="{StaticResource FontAwesomeSearchIcon}"
+                    TextColor="{StaticResource ButtonColorLight}"
+                    VerticalOptions="Center"
+                    WidthRequest="50" />
+
+
+            </Grid>
+
+        </Frame>
+
+        <Grid
+            Grid.Row="2"
+            Margin="20,4"
+            ColumnDefinitions="*,*">
+            <Label
+                Grid.Column="0"
+                FontFamily="PoppinsSemiBold"
+                FontSize="16"
+                Text="Bir Kelime"
+                TextColor="{StaticResource ButtonColorLight}" />
+
+            <Label
+                Grid.Column="1"
+                FontFamily="PoppinsSemiBold"
+                FontSize="12"
+                HorizontalTextAlignment="End"
+                Text="Tümünü Gör"
+                TextColor="{StaticResource TextColorLight}" />
+        </Grid>
+
+        <Frame
+            Grid.Row="2"
+            Margin="20,40"
+            Padding="20"
+            BackgroundColor="Transparent"
+            BorderColor="#c5d9d9"
+            CornerRadius="18"
+            HasShadow="False"
+            HeightRequest="150"
+            VerticalOptions="Start">
+
+            <StackLayout>
+                <Label
+                    FontFamily="PoppinsSemiBold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Text="biyçe"
+                    TextColor="{StaticResource ButtonColorLight}"
+                    VerticalOptions="Start" />
+
+                <Label
+                    FontFamily="PoppinsRegular"
+                    HorizontalOptions="Center"
+                    Text="prenses, prens eşi veya kızı."
+                    TextColor="{StaticResource TextColorLight}" />
+            </StackLayout>
+        </Frame>
+
+    </Grid>
+
+</ContentView>
