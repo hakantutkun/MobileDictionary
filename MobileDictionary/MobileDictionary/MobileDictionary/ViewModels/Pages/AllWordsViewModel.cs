@@ -1,6 +1,7 @@
 ﻿using MobileDictionary.Models;
 using MobileDictionary.Services;
 using MobileDictionary.ViewModels.Base;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
@@ -54,6 +55,17 @@ namespace MobileDictionary.ViewModels.Pages
             }
         }
 
+        /// <summary>
+        /// DetailPage view model
+        /// </summary>
+        private DetailPageViewModel _detailPageViewModel;
+
+        public DetailPageViewModel DetailPageViewModel
+        {
+            get { return _detailPageViewModel; }
+            set { _detailPageViewModel = value; OnPropertyChanged(nameof(DetailPageViewModel)); }
+        }
+
         #endregion
 
         #region Constructor
@@ -63,6 +75,9 @@ namespace MobileDictionary.ViewModels.Pages
         /// </summary>
         public AllWordsViewModel()
         {
+            // Set detail page view model instance
+            DetailPageViewModel = DetailPageViewModel.Instance;
+
             // Create an instance for history list.
             WordList = new ObservableCollection<Kelime>();
 
@@ -99,6 +114,14 @@ namespace MobileDictionary.ViewModels.Pages
                 SpinnerRunning = false;
 
             });
+        }
+
+        public async Task SetDetails(Kelime kelime)
+        {
+            List<Ornek> ornekList = await DBService.LoadExamples(kelime.KelimeID);
+
+            DetailPageViewModel.SelectedWord = kelime;
+            DetailPageViewModel.ExampleList = new ObservableCollection<Ornek>(ornekList);
         }
 
         #endregion

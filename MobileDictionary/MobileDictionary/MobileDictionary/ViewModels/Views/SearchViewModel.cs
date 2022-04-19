@@ -125,7 +125,7 @@ namespace MobileDictionary.ViewModels.Views
         public DetailPageViewModel DetailPageViewModel
         {
             get { return _detailPageViewModel; }
-            set { _detailPageViewModel = value; OnPropertyChanged(nameof(SearchViewModel)); }
+            set { _detailPageViewModel = value; OnPropertyChanged(nameof(DetailPageViewModel)); }
         }
 
         #endregion
