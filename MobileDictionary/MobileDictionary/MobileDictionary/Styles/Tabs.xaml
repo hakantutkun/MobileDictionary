@@ -98,7 +98,7 @@
         <Setter Property="xct:ShadowEffect.Color" Value="Black" />
         <Setter Property="xct:ShadowEffect.Radius" Value="20" />
         <Setter Property="xct:ShadowEffect.Opacity" Value=".5" />
-        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark=Black}" />
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource TabViewSelectedTextColorLight}, Dark={StaticResource TabViewSelectedTextColorDark}}" />
         <Setter Property="UnselectedLabelColor" Value="{StaticResource TabViewUnSelectedTextColor}" />
     </Style>

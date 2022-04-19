@@ -1,6 +1,8 @@
 ﻿using MobileDictionary.Models;
 using MobileDictionary.Services;
 using MobileDictionary.ViewModels.Base;
+using MobileDictionary.ViewModels.Pages;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
@@ -59,6 +61,17 @@ namespace MobileDictionary.ViewModels.Views
             }
         }
 
+        /// <summary>
+        /// DetailPage view model
+        /// </summary>
+        private DetailPageViewModel _detailPageViewModel;
+
+        public DetailPageViewModel DetailPageViewModel
+        {
+            get { return _detailPageViewModel; }
+            set { _detailPageViewModel = value; OnPropertyChanged(nameof(DetailPageViewModel)); }
+        }
+
         #endregion
 
         #region Commands
@@ -77,10 +90,15 @@ namespace MobileDictionary.ViewModels.Views
         /// </summary>
         public HistoryViewModel()
         {
+            // Set detail page view model instance
+            DetailPageViewModel = DetailPageViewModel.Instance;
+
             DeleteHistoryCommand = new Command(DeleteHistory);
 
             // Create an instance for history list.
             HistoryList = new ObservableCollection<Kelime>();
+
+            GetWords();
         }
 
         #endregion
@@ -154,6 +172,14 @@ namespace MobileDictionary.ViewModels.Views
             }
 
             HistoryList.Clear();
+        }
+
+        public async Task SetDetails(Kelime kelime)
+        {
+            List<Ornek> ornekList = await DBService.LoadExamples(kelime.KelimeID);
+
+            DetailPageViewModel.SelectedWord = kelime;
+            DetailPageViewModel.ExampleList = new ObservableCollection<Ornek>(ornekList);
         }
 
         #endregion

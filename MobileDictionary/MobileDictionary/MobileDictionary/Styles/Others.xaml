@@ -102,4 +102,16 @@
         <Setter Property="FontFamily" Value="FontAwesomeSolid" />
     </Style>
 
+    <!--  Clear Button Style  -->
+    <Style x:Key="ClearButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Red" />
+        <Setter Property="WidthRequest" Value="120" />
+        <Setter Property="HeightRequest" Value="36" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="CornerRadius" Value="7" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Margin" Value="0,10,0,10" />
+    </Style>
+
 </ResourceDictionary>

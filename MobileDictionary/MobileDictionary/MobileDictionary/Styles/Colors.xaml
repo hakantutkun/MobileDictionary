@@ -51,6 +51,9 @@
     <!--  PrimaryGray  -->
     <Color x:Key="PrimaryBlack">#000000</Color>
 
+    <!--  PrimaryGreen  -->
+    <Color x:Key="PrimaryGreen">#00cc00</Color>
+
     <!--#endregion-->
 
 </ResourceDictionary>
