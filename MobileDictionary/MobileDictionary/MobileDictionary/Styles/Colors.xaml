@@ -3,9 +3,53 @@
 
     <!--#region Colors-->
 
-    <Color x:Key="PageBackgroundColorLight">#DFF3F3</Color>
+    <Color x:Key="PageBackgroundColorLight">#EA0025</Color>
+    <Color x:Key="PageBackgroundColorDark">#1C2426</Color>
+
+    <Color x:Key="MainGridBackgroundLight">#F9F9FA</Color>
+    <Color x:Key="MainGridBackgroundDark">#18191A</Color>
+
+    <Color x:Key="LightPancakeBg">#FFFFFF</Color>
+    <Color x:Key="DarkPancakeBg">#283637</Color>
+
+    <Color x:Key="TabViewBackgroundLight">#FFFFFF</Color>
+    <Color x:Key="TabViewBackgroundDark">#283637</Color>
+
+    <Color x:Key="TabViewSelectedTextColorLight">#000000</Color>
+    <Color x:Key="TabViewSelectedTextColorDark">#FFFFFF</Color>
+
+    <Color x:Key="TabViewUnSelectedTextColor">#9AA6A6</Color>
+    <!--  CD6C59  -->
+
+
+
+    <Color x:Key="TitleColorLight">#FFFFFF</Color>
+    <Color x:Key="TitleColorDark">#352C1D</Color>
+
+    <Color x:Key="SubTitleColorLight">#E1E1E1</Color>
+    <Color x:Key="SubTitleColorDark">#352C1D</Color>
+
     <Color x:Key="TextColorLight">#0A9396</Color>
-    <Color x:Key="ButtonColorLight">#101012</Color>
+    <Color x:Key="ButtonColorLight">#757C8E</Color>
+
+    <Color x:Key="ShadowLight">#9c9c9c</Color>
+    <Color x:Key="ShadowDark">#000000</Color>
+
+    <Color x:Key="TextDark">#cccccc</Color>
+    <Color x:Key="PrimaryGray">#444444</Color>
+
+
+    <Color x:Key="PlaceHolderDark">#707070</Color>
+
+    <Color x:Key="SubTitleTextDark">#a6a6a6</Color>
+
+    <!--  PrimaryRed  -->
+    <Color x:Key="PrimaryRed">#EA0025</Color>
+    <!--  E11E3C  -->
+
+    <Color x:Key="PrimaryWhite">#FFFFFF</Color>
+    <!--  PrimaryGray  -->
+    <Color x:Key="PrimaryBlack">#000000</Color>
 
     <!--#endregion-->
 

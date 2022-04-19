@@ -17,8 +17,11 @@
 	  <!--Prevents color changes when phone is light mode but system theme is dark...-->
 	  <item name="android:forceDarkAllowed">false</item>
 
-	  <item name="android:statusBarColor">#000000</item>
-	  <item name="android:windowLightStatusBar">true</item>
+	  <!--<item name="android:statusBarColor">#000000</item>-->
+	  <!--<item name="android:windowLightStatusBar">true</item>-->
 	  <item name="android:windowTranslucentStatus">true</item>
+
+	  <!--To disable list view tapped background color-->
+	  <item name="android:colorActivatedHighlight">@android:color/transparent</item>
   </style>
 </resources>

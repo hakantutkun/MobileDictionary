@@ -29,7 +29,7 @@ namespace MobileDictionary.Helpers
             }
             else
             {
-                e?.SetStatusBarColor(new Color(248, 248, 248, 0), true);
+                e?.SetStatusBarColor(new Color(255, 255, 255), false);
             }
         }
     }

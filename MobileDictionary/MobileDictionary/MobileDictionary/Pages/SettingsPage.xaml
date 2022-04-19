@@ -3,12 +3,12 @@
     x:Class="MobileDictionary.Pages.SettingsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Style="{StaticResource DefaultPageStyle}">
+    Style="{StaticResource DefaultContentPageStyle}">
     <ContentPage.Content>
         <StackLayout>
             <Label
                 HorizontalOptions="CenterAndExpand"
-                Text="Welcome to Xamarin.Forms!"
+                Text="Settings Page!"
                 VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

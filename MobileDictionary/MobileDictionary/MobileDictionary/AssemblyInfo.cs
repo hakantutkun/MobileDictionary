@@ -17,3 +17,17 @@ using Xamarin.Forms.Xaml;
 [assembly: ExportFont("Poppins-Medium.ttf", Alias = "PoppinsMedium")]
 [assembly: ExportFont("Poppins-Regular.ttf", Alias = "PoppinsRegular")]
 [assembly: ExportFont("Poppins-Thin.ttf", Alias = "PoppinsThin")]
+
+// Poppins Fonts
+[assembly: ExportFont("OpenSans-Bold.ttf", Alias = "OpenSansBold")]
+[assembly: ExportFont("OpenSans-BoldItalic.ttf", Alias = "OpenSansItalic")]
+[assembly: ExportFont("OpenSans-ExtraBold.ttf", Alias = "OpenSansExtraBold")]
+[assembly: ExportFont("OpenSans-ExtraBoldItalic.ttf", Alias = "OpenSansExtraBoldItalic")]
+[assembly: ExportFont("OpenSans-Italic.ttf", Alias = "OpenSansItalic")]
+[assembly: ExportFont("OpenSans-Light.ttf", Alias = "OpenSansLight")]
+[assembly: ExportFont("OpenSans-LightItalic.ttf", Alias = "OpenSansLightItalic")]
+[assembly: ExportFont("OpenSans-Medium.ttf", Alias = "OpenSansMedium")]
+[assembly: ExportFont("OpenSans-MediumItalic.ttf", Alias = "OpenSansMediumItalic")]
+[assembly: ExportFont("OpenSans-Regular.ttf", Alias = "OpenSansRegular")]
+[assembly: ExportFont("OpenSans-SemiBold.ttf", Alias = "OpenSansSemiBold")]
+[assembly: ExportFont("OpenSans-SemiBoldItalic.ttf", Alias = "OpenSansSemiBoldItalic")]

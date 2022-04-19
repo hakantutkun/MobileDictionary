@@ -3,59 +3,46 @@
     x:Class="MobileDictionary.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customViews="clr-namespace:Sharpnado.Presentation.Forms.CustomViews;assembly=Sharpnado.Presentation.Forms"
+    xmlns:tabs="clr-namespace:Sharpnado.Presentation.Forms.CustomViews.Tabs;assembly=Sharpnado.Presentation.Forms"
     xmlns:views="clr-namespace:MobileDictionary.Views"
-    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    Style="{StaticResource DefaultPageStyle}">
+    Style="{StaticResource DefaultContentPageStyle}">
 
     <!--  Main Grid  -->
-    <Grid Margin="0">
+    <Grid>
 
-        <!--  Main TabView  -->
-        <xct:TabView x:Name="MainTabView" Style="{StaticResource TabViewStyle}">
+        <tabs:ViewSwitcher
+            x:Name="Switcher"
+            Animate="True"
+            SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}">
+            <customViews:LazyView x:TypeArguments="views:HistoryView" BindingContext="{Binding HistoryViewModel}" />
+            <customViews:LazyView x:TypeArguments="views:SearchView" BindingContext="{Binding SearchViewModel}" />
+            <customViews:LazyView x:TypeArguments="views:FavouritesView" BindingContext="{Binding FavouritesViewModel}" />
+        </tabs:ViewSwitcher>
 
-            <!--  Background of Tab Strip  -->
-            <xct:TabView.TabStripBackgroundView>
-                <BoxView Style="{StaticResource TabStripBackgroundStyle}" />
-            </xct:TabView.TabStripBackgroundView>
+        <tabs:TabHostView
+            x:Name="TabHost"
+            Margin="0,0,0,-1"
+            SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}"
+            Style="{StaticResource TabHostViewStyle}"
+            VerticalOptions="End">
 
-            <!--  History Tab Item  -->
-            <xct:TabViewItem
-                x:Name="HistoryTabItem"
-                Icon="{StaticResource FontAwesomeHistoryIcon}"
-                Style="{StaticResource DefaultTabViewItemStyle}"
-                Text="Geçmiş">
+            <tabs:TabHostView.Tabs>
+                <tabs:BottomTabItem
+                    IconImageSource="{StaticResource FontAwesomeHistoryIcon}"
+                    Label="Geçmiş"
+                    Style="{StaticResource DefaultTabStyle}" />
+                <tabs:BottomTabItem
+                    IconImageSource="{StaticResource FontAwesomeSearchIcon}"
+                    Label="Ara"
+                    Style="{StaticResource DefaultTabStyle}" />
+                <tabs:BottomTabItem
+                    IconImageSource="{StaticResource FontAwesomeBookmarkIcon}"
+                    Label="Kelimelerim"
+                    Style="{StaticResource DefaultTabStyle}" />
+            </tabs:TabHostView.Tabs>
 
-                <!--  History Tab Content  -->
-                <views:HistoryView />
-
-            </xct:TabViewItem>
-
-            <!--  Search Tab Item  -->
-            <xct:TabViewItem
-                x:Name="SearchTabItem"
-                Icon="{StaticResource FontAwesomeSearchIcon}"
-                IsSelected="True"
-                Style="{StaticResource DefaultTabViewItemStyle}"
-                Text="Ara">
-
-                <!--  Search Tab Content  -->
-                <views:SearchView />
-
-            </xct:TabViewItem>
-
-            <!--  Favourites Tab Item  -->
-            <xct:TabViewItem
-                x:Name="FavouritesTabItem"
-                Icon="{StaticResource FontAwesomeBookmarkIcon}"
-                Style="{StaticResource DefaultTabViewItemStyle}"
-                Text="Kelimelerim">
-
-                <!--  Tab Content  -->
-                <views:FavouritesView />
-            </xct:TabViewItem>
-
-        </xct:TabView>
-
+        </tabs:TabHostView>
     </Grid>
 
 </ContentPage>

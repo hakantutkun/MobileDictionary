@@ -3,13 +3,142 @@
     x:Class="MobileDictionary.Pages.DetailPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Style="{StaticResource DefaultPageStyle}">
-    <ContentPage.Content>
-        <StackLayout>
+    xmlns:controls="clr-namespace:MobileDictionary.Controls"
+    xmlns:tabs="clr-namespace:Sharpnado.Presentation.Forms.CustomViews.Tabs;assembly=Sharpnado.Presentation.Forms"
+    Style="{StaticResource DefaultContentPageStyle}">
+
+    <!--  Main Grid  -->
+    <Grid
+        RowDefinitions="Auto,Auto,*"
+        RowSpacing="0"
+        Style="{StaticResource MainGridStyle}">
+
+        <Frame
+            Grid.Row="0"
+            CornerRadius="0"
+            Style="{StaticResource TopFrameStyle}">
+
+            <Grid RowDefinitions="Auto,*">
+
+                <!--  Back Button  -->
+                <Button
+                    x:Name="BackButton"
+                    Grid.Row="0"
+                    Margin="5,0,0,0"
+                    Clicked="BackButton_Clicked"
+                    FontSize="{StaticResource FontSizeXLarge}"
+                    HorizontalOptions="Start"
+                    Style="{StaticResource TransparentButtonStyle}"
+                    Text="{StaticResource FontAwesomeBackIcon}"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    WidthRequest="30" />
+
+                <!--  Word Container  -->
+                <StackLayout Grid.Row="1">
+
+                    <!--  Word  -->
+                    <Label
+                        x:Name="wordLabel"
+                        Margin="0,0,0,0"
+                        FontAttributes="Bold"
+                        FontFamily="OpenSansBold"
+                        FontSize="{StaticResource FontSizeXXLarge}"
+                        HorizontalOptions="Center"
+                        Text="{Binding SelectedWord.KaracaycaAnlam}"
+                        TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
+                                                    Dark={StaticResource TextDark}}" />
+
+                    <!--  Buttons Container  -->
+                    <StackLayout
+                        Margin="0,0,0,10"
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal">
+
+                        <!--  Copy Button  -->
+                        <Button
+                            Command="{Binding CopyCommand}"
+                            Style="{StaticResource WordCardButton}"
+                            Text="{StaticResource FontAwesomeCopyIcon}" />
+
+                        <!--  Listen Button  -->
+                        <Button
+                            Command="{Binding ListenCommand}"
+                            Style="{StaticResource WordCardButton}"
+                            Text="{StaticResource FontAwesomeSoundIcon}" />
+
+                        <Grid>
+                            <!--  Save Button  -->
+                            <Button
+                                Command="{Binding SaveCommand}"
+                                IsVisible="{Binding SaveButtonVisibility}"
+                                Style="{StaticResource SaveButtonStyle}"
+                                Text="{StaticResource FontAwesomeBookmarkIcon}" />
+                            <!--  Remove Button  -->
+                            <Button
+                                Command="{Binding SaveCommand}"
+                                IsVisible="{Binding RemoveButtonVisibility}"
+                                Style="{StaticResource WordCardButton}"
+                                Text="{StaticResource FontAwesomeBookmarkIcon}" />
+                        </Grid>
+
+                        <!--  Share Button  -->
+                        <Button
+                            Command="{Binding ShareCommand}"
+                            Style="{StaticResource WordCardButton}"
+                            Text="{StaticResource FontAwesomeShareIcon}" />
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Grid>
+
+
+        </Frame>
+
+        <tabs:TabHostView
+            x:Name="TabHost"
+            Grid.Row="1"
+            SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}">
+            <tabs:TabHostView.Tabs>
+                <tabs:UnderlinedTabItem Label="Kelime Anlamı" Style="{StaticResource DetailTabStyle}" />
+                <tabs:UnderlinedTabItem Label="Örnekler" Style="{StaticResource DetailTabStyle}" />
+            </tabs:TabHostView.Tabs>
+        </tabs:TabHostView>
+
+        <Frame
+            Grid.Row="1"
+            Margin="0,0,10,0"
+            Padding="0"
+            BackgroundColor="Red"
+            CornerRadius="10"
+            HasShadow="False"
+            HeightRequest="20"
+            HorizontalOptions="End"
+            IsVisible="{Binding BadgeVisibility}"
+            VerticalOptions="Center"
+            WidthRequest="20">
+
             <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+                FontFamily="OpenSansRegular"
+                FontSize="10"
+                HorizontalOptions="Center"
+                Text="{Binding NumberOfExamples}"
+                TextColor="White"
+                VerticalOptions="Center" />
+
+        </Frame>
+
+        <tabs:ViewSwitcher
+            x:Name="Switcher"
+            Grid.Row="2"
+            Animate="True"
+            SelectedIndex="{Binding SelectedTabIndex}">
+            <controls:WordDetail x:Name="WordDetailControl" BindingContext="{Binding SelectedWord}" />
+            <controls:ExamplesDetail BindingContext="{Binding ExampleList}" />
+        </tabs:ViewSwitcher>
+
+    </Grid>
+
 </ContentPage>

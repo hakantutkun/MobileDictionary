@@ -4,7 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
-    <!--#region Fonts-->
+    <!--#region Font Size Definitions-->
+
+    <system:Double x:Key="FontSizeSmaller">10</system:Double>
+    <system:Double x:Key="FontSizeSmall">12</system:Double>
+    <system:Double x:Key="FontSizeRegular">14</system:Double>
+    <system:Double x:Key="FontSizeLarge">20</system:Double>
+    <system:Double x:Key="FontSizeXLarge">24</system:Double>
+    <system:Double x:Key="FontSizeXXLarge">30</system:Double>
+
+    <!--#endregion-->
 
     <!--#region Pre-Defined FontAwesome Icons-->
 
@@ -24,8 +33,6 @@
     <system:String x:Key="FontAwesomeListIcon">&#xf03a;</system:String>
     <system:String x:Key="FontAwesomeSettingsIcon">&#xf013;</system:String>
     <system:String x:Key="FontAwesomeBarsIcon">&#xf0c9;</system:String>
-
-    <!--#endregion-->
 
     <!--#endregion-->
 

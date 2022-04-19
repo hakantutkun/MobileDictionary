@@ -1,14 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <!--#region Pages-->
-
-    <Style x:Key="DefaultPageStyle" TargetType="{x:Type ContentPage}">
-        <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColorLight}" />
+    <!--  Default ContentPage Stlye  -->
+    <Style x:Key="DefaultContentPageStyle" TargetType="{x:Type ContentPage}">
         <Setter Property="NavigationPage.HasBackButton" Value="False" />
         <Setter Property="NavigationPage.HasNavigationBar" Value="False" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource PageBackgroundColorLight}, Dark={StaticResource PageBackgroundColorDark}}" />
     </Style>
 
-    <!--#endregion-->
+    <!--  Default ContentView Style  -->
+    <Style x:Key="DefaultContentViewStyle" TargetType="{x:Type ContentView}">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource PageBackgroundColorLight}, Dark={StaticResource PageBackgroundColorDark}}" />
+    </Style>
 
 </ResourceDictionary>

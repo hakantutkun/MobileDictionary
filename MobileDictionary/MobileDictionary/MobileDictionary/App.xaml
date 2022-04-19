@@ -16,8 +16,14 @@
                 <!--  Tab Resources  -->
                 <ResourceDictionary Source="Styles/Tabs.xaml" />
 
-                <!--  Tab Resources  -->
+                <!--  Page Resources  -->
                 <ResourceDictionary Source="Styles/Pages.xaml" />
+
+                <!--  Text Resources  -->
+                <ResourceDictionary Source="Styles/Texts.xaml" />
+
+                <!--  Other Resources  -->
+                <ResourceDictionary Source="Styles/Others.xaml" />
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

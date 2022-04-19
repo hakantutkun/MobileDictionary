@@ -1,4 +1,5 @@
 ﻿using MobileDictionary.Helpers;
+using MobileDictionary.Pages;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -18,6 +19,10 @@ namespace MobileDictionary
         {
             // Initialize
             InitializeComponent();
+
+            // Activate sharpnado
+            Sharpnado.Tabs.Initializer.Initialize(false, false);
+            Sharpnado.Shades.Initializer.Initialize(loggerEnable: false);
 
             // Set the theme 
             TheTheme.SetTheme();

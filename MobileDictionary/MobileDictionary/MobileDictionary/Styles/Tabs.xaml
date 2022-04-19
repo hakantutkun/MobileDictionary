@@ -2,20 +2,105 @@
 <ResourceDictionary
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tabs="clr-namespace:Sharpnado.Presentation.Forms.CustomViews.Tabs;assembly=Sharpnado.Presentation.Forms"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
 
-    <!--  TabView Style  -->
-    <Style x:Key="TabViewStyle" TargetType="{x:Type xct:TabView}">
-
-        <Setter Property="TabStripHeight" Value="60" />
-        <Setter Property="TabStripPlacement" Value="Bottom" />
-        <Setter Property="Padding" Value="0" />
+    <!--  TabHostView Style  -->
+    <Style x:Key="TabHostViewStyle" TargetType="{x:Type tabs:TabHostView}">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource TabViewBackgroundLight}, Dark={StaticResource TabViewBackgroundDark}}" />
+        <Setter Property="xct:ShadowEffect.Color" Value="Black" />
+        <Setter Property="xct:ShadowEffect.Radius" Value="10" />
+        <Setter Property="HeightRequest" Value="60" />
     </Style>
 
-    <!--  TabStrip Background Style  -->
-    <Style x:Key="TabStripBackgroundStyle" TargetType="{x:Type BoxView}">
-        <Setter Property="Margin" Value="0" />
+    <!--  Default Tab Style  -->
+    <Style x:Key="DefaultTabStyle" TargetType="{x:Type tabs:BottomTabItem}">
+        <Setter Property="SelectedTabColor" Value="Black" />
+        <Setter Property="LabelSize" Value="14" />
+        <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource TabViewSelectedTextColorLight}, Dark={StaticResource TabViewSelectedTextColorDark}}" />
+        <Setter Property="UnselectedLabelColor" Value="{StaticResource TabViewUnSelectedTextColor}" />
+        <Setter Property="ControlTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <StackLayout
+                        Margin="0,10,0,0"
+                        HorizontalOptions="Center"
+                        InputTransparent="True"
+                        VerticalOptions="Start">
+                        <Label
+                            Grid.Row="0"
+                            Margin="0,0,0,-5"
+                            FontFamily="FontAwesomeSolid"
+                            FontSize="20"
+                            HorizontalOptions="Center"
+                            InputTransparent="True"
+                            Text="{TemplateBinding IconImageSource}"
+                            TextColor="{TemplateBinding SelectedTabColor}"
+                            VerticalOptions="Center" />
+                        <Label
+                            Margin="0,2"
+                            FontFamily="OpenSansSemiBold"
+                            FontSize="12"
+                            HorizontalOptions="Center"
+                            InputTransparent="True"
+                            Text="{TemplateBinding Label}"
+                            TextColor="{TemplateBinding SelectedTabColor}"
+                            VerticalOptions="Center" />
+                    </StackLayout>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger TargetType="{x:Type tabs:BottomTabItem}" Property="IsSelected" Value="False">
+                <Setter Property="ControlTemplate">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <StackLayout
+                                Margin="0,10,0,0"
+                                HorizontalOptions="Center"
+                                InputTransparent="True"
+                                VerticalOptions="Start">
+                                <Label
+                                    Grid.Row="0"
+                                    Margin="0,0,0,-5"
+                                    FontFamily="FontAwesomeSolid"
+                                    FontSize="20"
+                                    HorizontalOptions="Center"
+                                    InputTransparent="True"
+                                    Text="{TemplateBinding IconImageSource}"
+                                    TextColor="{TemplateBinding UnselectedLabelColor}"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    Margin="0,2"
+                                    FontFamily="OpenSansRegular"
+                                    FontSize="12"
+                                    HorizontalOptions="Center"
+                                    InputTransparent="True"
+                                    Text="{TemplateBinding Label}"
+                                    TextColor="{TemplateBinding UnselectedLabelColor}"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  Default Tab Style  -->
+    <Style x:Key="DetailTabStyle" TargetType="{x:Type tabs:UnderlinedTabItem}">
+        <Setter Property="SelectedTabColor" Value="Black" />
+        <Setter Property="FontFamily" Value="OpenSansSemiBold" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="LabelSize" Value="14" />
+        <Setter Property="xct:ShadowEffect.Color" Value="Black" />
+        <Setter Property="xct:ShadowEffect.Radius" Value="20" />
+        <Setter Property="xct:ShadowEffect.Opacity" Value=".5" />
         <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource TabViewSelectedTextColorLight}, Dark={StaticResource TabViewSelectedTextColorDark}}" />
+        <Setter Property="UnselectedLabelColor" Value="{StaticResource TabViewUnSelectedTextColor}" />
     </Style>
 
     <!--  Default Tab Item Style  -->

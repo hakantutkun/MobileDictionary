@@ -6,7 +6,9 @@ using Android.Runtime;
 using Android.OS;
 using MobileDictionary.Helpers;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(MobileDictionary.Droid.Environment))]
 namespace MobileDictionary.Droid
 {
     [Activity(Label = "MobileDictionary", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
@@ -40,13 +42,19 @@ namespace MobileDictionary.Droid
             var window = activity.Window;
 
             window.AddFlags(Android.Views.WindowManagerFlags.DrawsSystemBarBackgrounds);
-            window.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
-            window.SetStatusBarColor(color.ToPlatformColor());
+            //window.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+            //window.SetStatusBarColor(color.ToPlatformColor());
 
             if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.M)
             {
-                var flag = (Android.Views.StatusBarVisibility)Android.Views.SystemUiFlags.LightStatusBar;
-                window.DecorView.SystemUiVisibility = darkStatusBarTint ? flag : 0;
+                //var flag = (Android.Views.StatusBarVisibility)Android.Views.SystemUiFlags.LightStatusBar;
+                //window.DecorView.SystemUiVisibility = darkStatusBarTint ? flag : 0;
+            }
+
+            if (Build.VERSION.SdkInt >= Build.VERSION_CODES.Lollipop)
+            {
+                //window.SetStatusBarColor(Android.Graphics.Color.Orange);
+                window.SetNavigationBarColor(color.ToPlatformColor());
             }
         }
     }
