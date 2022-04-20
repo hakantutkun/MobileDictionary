@@ -189,6 +189,88 @@
             <StackLayout IsVisible="{Binding SearchButtonVisibility}">
 
                 <controls:OneWordControl />
+
+                <Grid Margin="30,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid
+                        x:Name="AllWordsGrid"
+                        Grid.Row="0"
+                        Grid.Column="0">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AllWordsGrid_Tapped" />
+                        </Grid.GestureRecognizers>
+
+                        <Frame
+                            Margin="0"
+                            Padding="20,10,20,10"
+                            Style="{StaticResource PancakeStyle}">
+
+                            <StackLayout Orientation="Horizontal">
+
+                                <Label
+                                    FontSize="{StaticResource FontSizeXXLarge}"
+                                    HorizontalOptions="Start"
+                                    Style="{StaticResource TransparentButtonStyle}"
+                                    Text="{StaticResource FontAwesomeListIcon}"
+                                    WidthRequest="50" />
+
+                                <Label
+                                    FontFamily="RegularFont"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Tüm Kelimeler"
+                                    TextColor="{AppThemeBinding Dark={StaticResource TextDark},
+                                                                Light={StaticResource PrimaryGray}}" />
+
+                            </StackLayout>
+
+                        </Frame>
+                    </Grid>
+
+                    <Grid Grid.Row="0" Grid.Column="1">
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SettingsGrid_Tapped" />
+                        </Grid.GestureRecognizers>
+
+                        <Frame
+                            Margin="0"
+                            Padding="20,10,20,10"
+                            Style="{StaticResource PancakeStyle}">
+
+                            <StackLayout Orientation="Horizontal">
+
+                                <Label
+                                    FontSize="{StaticResource FontSizeXXLarge}"
+                                    HorizontalOptions="Start"
+                                    Style="{StaticResource TransparentButtonStyle}"
+                                    Text="{StaticResource FontAwesomeSettingsIcon}"
+                                    WidthRequest="50" />
+
+                                <Label
+                                    FontFamily="RegularFont"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Sözlük Ayarları"
+                                    TextColor="{AppThemeBinding Dark={StaticResource TextDark},
+                                                                Light={StaticResource PrimaryGray}}" />
+
+                            </StackLayout>
+
+                        </Frame>
+                    </Grid>
+
+                </Grid>
+
             </StackLayout>
 
 
