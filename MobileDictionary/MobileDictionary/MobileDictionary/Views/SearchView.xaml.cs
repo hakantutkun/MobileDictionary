@@ -1,10 +1,8 @@
 ﻿using MobileDictionary.Models;
 using MobileDictionary.Pages;
-using MobileDictionary.Services;
 using MobileDictionary.ViewModels.Pages;
 using MobileDictionary.ViewModels.Views;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Essentials;
 using Xamarin.Forms;

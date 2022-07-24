@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
-using Sharpnado.Presentation.Forms.iOS;
+﻿using Sharpnado.Presentation.Forms.iOS;
 using UIKit;
 
 namespace MobileDictionary.iOS

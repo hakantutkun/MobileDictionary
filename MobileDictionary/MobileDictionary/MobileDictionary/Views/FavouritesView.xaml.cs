@@ -1,12 +1,6 @@
 ﻿using MobileDictionary.Models;
 using MobileDictionary.Pages;
-using MobileDictionary.Services;
 using MobileDictionary.ViewModels.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
