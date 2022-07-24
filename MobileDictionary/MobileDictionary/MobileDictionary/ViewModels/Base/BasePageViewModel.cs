@@ -48,7 +48,6 @@ namespace MobileDictionary.ViewModels.Base
 
         #endregion
 
-
         #region Commands
 
         public ICommand ClosePopupCommand { get; set; }

@@ -4,7 +4,12 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
+    <!--  Word Detail Control  -->
+
+    <!--  Main Grid  -->
     <Grid>
+
+        <!--  Meaning label for the word  -->
         <Label
             Padding="30"
             FontFamily="OpenSansRegular"

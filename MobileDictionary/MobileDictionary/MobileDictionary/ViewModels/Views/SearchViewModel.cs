@@ -72,7 +72,6 @@ namespace MobileDictionary.ViewModels.Views
             set { _searchCompleteText = value; OnPropertyChanged(nameof(SearchCompleteText)); }
         }
 
-
         /// <summary>
         /// A flag that controls listview visibility
         /// </summary>

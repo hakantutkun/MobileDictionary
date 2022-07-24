@@ -89,24 +89,26 @@
                             Text="{StaticResource FontAwesomeShareIcon}" />
 
                     </StackLayout>
-
                 </StackLayout>
-
             </Grid>
-
-
         </Frame>
 
+        <!--  Tabs for meaning and examples  -->
         <tabs:TabHostView
             x:Name="TabHost"
             Grid.Row="1"
             SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}">
+
             <tabs:TabHostView.Tabs>
+                <!--  Meaning Tab  -->
                 <tabs:UnderlinedTabItem Label="Kelime Anlamı" Style="{StaticResource DetailTabStyle}" />
+                <!--  Examples Tab  -->
                 <tabs:UnderlinedTabItem Label="Örnekler" Style="{StaticResource DetailTabStyle}" />
             </tabs:TabHostView.Tabs>
+
         </tabs:TabHostView>
 
+        <!--  Badge Icon  -->
         <Frame
             Grid.Row="1"
             Margin="0,0,10,0"
@@ -120,6 +122,7 @@
             VerticalOptions="Center"
             WidthRequest="20">
 
+            <!--  Badge Text Label  -->
             <Label
                 FontFamily="OpenSansRegular"
                 FontSize="10"
@@ -130,6 +133,7 @@
 
         </Frame>
 
+        <!--  Tabs Switcher  -->
         <tabs:ViewSwitcher
             x:Name="Switcher"
             Grid.Row="2"
@@ -138,7 +142,5 @@
             <controls:WordDetail x:Name="WordDetailControl" BindingContext="{Binding SelectedWord}" />
             <controls:ExamplesDetail BindingContext="{Binding ExampleList}" />
         </tabs:ViewSwitcher>
-
     </Grid>
-
 </ContentPage>

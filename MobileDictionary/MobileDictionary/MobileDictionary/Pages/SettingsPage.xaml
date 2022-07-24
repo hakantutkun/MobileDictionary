@@ -42,6 +42,7 @@
                 TextColor="{AppThemeBinding Light={StaticResource PrimaryGray},
                                             Dark={StaticResource SubTitleTextDark}}" />
 
+            <!--  Theme buttons grid  -->
             <Grid Margin="40,10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -49,8 +50,10 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
+                <!--  System radio button grid  -->
                 <Grid Grid.Column="0">
 
+                    <!--  Gesture recognizer for radio system tab  -->
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Tapped="RadioSystemTapped" />
                     </Grid.GestureRecognizers>
@@ -92,6 +95,7 @@
                         VerticalOptions="Start" />
                 </Grid>
 
+                <!--  Light radio button grid  -->
                 <Grid Grid.Column="1">
 
                     <Grid.GestureRecognizers>
@@ -135,6 +139,7 @@
                         VerticalOptions="Start" />
                 </Grid>
 
+                <!--  Dark radio button grid  -->
                 <Grid Grid.Column="2">
 
                     <Grid.GestureRecognizers>
@@ -174,12 +179,8 @@
                         HorizontalOptions="End"
                         VerticalOptions="Start" />
                 </Grid>
+
             </Grid>
-
-
         </StackLayout>
-
     </Grid>
-
-
 </ContentPage>

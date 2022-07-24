@@ -19,9 +19,6 @@
     <Color x:Key="TabViewSelectedTextColorDark">#FFFFFF</Color>
 
     <Color x:Key="TabViewUnSelectedTextColor">#9AA6A6</Color>
-    <!--  CD6C59  -->
-
-
 
     <Color x:Key="TitleColorLight">#FFFFFF</Color>
     <Color x:Key="TitleColorDark">#352C1D</Color>

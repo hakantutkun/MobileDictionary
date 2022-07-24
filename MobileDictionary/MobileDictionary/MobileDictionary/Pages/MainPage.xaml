@@ -11,15 +11,20 @@
     <!--  Main Grid  -->
     <Grid>
 
+        <!--  Main Tab Switcher  -->
         <tabs:ViewSwitcher
             x:Name="Switcher"
             Animate="True"
             SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}">
+            <!--  History Tab  -->
             <customViews:LazyView x:TypeArguments="views:HistoryView" BindingContext="{Binding HistoryViewModel}" />
+            <!--  Search Tab  -->
             <customViews:LazyView x:TypeArguments="views:SearchView" BindingContext="{Binding SearchViewModel}" />
+            <!--  Favourites Tab  -->
             <customViews:LazyView x:TypeArguments="views:FavouritesView" BindingContext="{Binding FavouritesViewModel}" />
         </tabs:ViewSwitcher>
 
+        <!--  Tab Hosts  -->
         <tabs:TabHostView
             x:Name="TabHost"
             Margin="0,0,0,-1"
@@ -28,21 +33,22 @@
             VerticalOptions="End">
 
             <tabs:TabHostView.Tabs>
+                <!--  History Tab Item  -->
                 <tabs:BottomTabItem
                     IconImageSource="{StaticResource FontAwesomeHistoryIcon}"
                     Label="Geçmiş"
                     Style="{StaticResource DefaultTabStyle}" />
+                <!--  Search Tab Item  -->
                 <tabs:BottomTabItem
                     IconImageSource="{StaticResource FontAwesomeSearchIcon}"
                     Label="Ara"
                     Style="{StaticResource DefaultTabStyle}" />
+                <!--  Favourites Tab Item  -->
                 <tabs:BottomTabItem
                     IconImageSource="{StaticResource FontAwesomeBookmarkIcon}"
                     Label="Kelimelerim"
                     Style="{StaticResource DefaultTabStyle}" />
             </tabs:TabHostView.Tabs>
-
         </tabs:TabHostView>
     </Grid>
-
 </ContentPage>

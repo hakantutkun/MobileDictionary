@@ -8,6 +8,7 @@
     <StackLayout>
 
         <Grid>
+
             <!--  Word Card Title  -->
             <Label
                 Margin="40,10,0,0"
@@ -25,7 +26,6 @@
                 HeightRequest="30"
                 Style="{StaticResource TransparentButtonStyle}"
                 Text="{StaticResource FontAwesomeRefreshIcon}" />
-
 
         </Grid>
 
@@ -104,7 +104,6 @@
                         Text="{StaticResource FontAwesomeShareIcon}" />
 
                 </StackLayout>
-
 
             </StackLayout>
 

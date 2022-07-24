@@ -4,12 +4,19 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
+    <!--  Detail Detail Page Examples Control  -->
+
+    <!--  ListView Control for example items  -->
     <ListView
         x:Name="ornekListView"
         HasUnevenRows="true"
         IsTabStop="False"
         ItemsSource="{Binding .}">
+
+        <!--  Item Template for list view  -->
         <ListView.ItemTemplate>
+
+            <!--  Data Template for ListView  -->
             <DataTemplate>
                 <ViewCell>
                     <ViewCell.View>
@@ -18,6 +25,8 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
+
+                            <!--  Example icon label  -->
                             <Label
                                 Grid.Column="0"
                                 Margin="10,0,5,0"
@@ -26,17 +35,23 @@
                                 Style="{StaticResource TransparentButtonStyle}"
                                 Text="{StaticResource FontAwesomeBulletIcon}"
                                 TextColor="{StaticResource PrimaryRed}" />
+
+                            <!--  Grid for example  -->
                             <Grid Grid.Column="1" Padding="0,10">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
+
+                                <!--  Example Title  -->
                                 <Label
                                     FontAttributes="Bold"
                                     FontSize="{StaticResource FontSizeRegular}"
                                     Text="{Binding OrnekBaslik}"
                                     TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
                                                                 Dark={StaticResource TextDark}}" />
+
+                                <!--  Example Meaning  -->
                                 <Label
                                     Grid.Row="1"
                                     FontAttributes="Italic"
@@ -45,12 +60,10 @@
                                     TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
                                                                 Dark={StaticResource SubTitleTextDark}}" />
                             </Grid>
-
                         </Grid>
                     </ViewCell.View>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-
 </ContentView>

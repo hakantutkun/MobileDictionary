@@ -265,18 +265,10 @@
                                                                 Light={StaticResource PrimaryGray}}" />
 
                             </StackLayout>
-
                         </Frame>
                     </Grid>
-
                 </Grid>
-
             </StackLayout>
-
-
         </StackLayout>
-
-
     </Grid>
-
 </ContentView>
