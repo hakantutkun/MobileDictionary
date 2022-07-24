@@ -34,7 +34,7 @@
                 <Frame
                     Margin="30,20,30,-10"
                     HeightRequest="50"
-                    Style="{StaticResource PancakeStyle}">
+                    Style="{StaticResource SearchBarStyle}">
 
                     <Grid>
 
@@ -81,7 +81,7 @@
                         <!--  Search Button Container  -->
                         <Frame
                             Grid.Column="2"
-                            Margin="3"
+                            Margin="6"
                             Padding="0"
                             BackgroundColor="{StaticResource PrimaryRed}"
                             CornerRadius="26">

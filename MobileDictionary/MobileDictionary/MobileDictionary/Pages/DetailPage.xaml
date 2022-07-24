@@ -46,7 +46,7 @@
                         FontSize="{StaticResource FontSizeXXLarge}"
                         HorizontalOptions="Center"
                         Text="{Binding SelectedWord.KaracaycaAnlam}"
-                        TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
+                        TextColor="{AppThemeBinding Light={StaticResource PrimaryWhite},
                                                     Dark={StaticResource TextDark}}" />
 
                     <!--  Buttons Container  -->

@@ -27,7 +27,13 @@
         <Setter Property="xct:ShadowEffect.Opacity" Value=".4" />
         <Setter Property="CornerRadius" Value="26" />
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightPancakeBg}, Dark={StaticResource PageBackgroundColorDark}}" />
+    </Style>
 
+    <Style
+        x:Key="SearchBarStyle"
+        BasedOn="{StaticResource PancakeStyle}"
+        TargetType="{x:Type Frame}">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightPancakeBg}, Dark={StaticResource MainGridBackgroundDark}}" />
     </Style>
 
     <!--  Entry Copy Button Style  -->
@@ -97,7 +103,7 @@
         <Setter Property="TextColor" Value="#FFFFFF" />
         <Setter Property="FontSize" Value="16" />
         <Setter Property="Margin" Value="5,0,0,0" />
-        <Setter Property="Padding" Value="10,15,15,10" />
+        <Setter Property="Padding" Value="2,14,5,5" />
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="Text" Value="{DynamicResource FontAwesomeSearchIcon}" />
         <Setter Property="FontFamily" Value="FontAwesomeSolid" />
