@@ -38,67 +38,61 @@
         </Frame>
 
         <Grid Grid.Row="1">
-            <Frame
-                Margin="30,20,30,85"
-                Style="{StaticResource PancakeStyle}"
-                VerticalOptions="Start">
 
-                <ListView
-                    x:Name="wordListView"
-                    CachingStrategy="RecycleElement"
-                    HasUnevenRows="true"
-                    IsVisible="{Binding ListViewVisibility}"
-                    ItemTapped="wordListView_ItemTapped"
-                    ItemsSource="{Binding HistoryList}"
-                    SeparatorColor="{AppThemeBinding Light=#d6d6d6,
-                                                     Dark=#474747}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.View>
-                                    <Grid>
+            <ListView
+                x:Name="wordListView"
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="true"
+                IsVisible="{Binding ListViewVisibility}"
+                ItemTapped="wordListView_ItemTapped"
+                ItemsSource="{Binding HistoryList}"
+                SeparatorColor="{AppThemeBinding Light=#d6d6d6,
+                                                 Dark=#474747}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
 
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="Auto" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid Padding="20,10">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="*" />
-                                                <RowDefinition Height="*" />
-                                            </Grid.RowDefinitions>
-                                            <Label
-                                                FontAttributes="Bold"
-                                                FontSize="{StaticResource FontSizeRegular}"
-                                                Text="{Binding KaracaycaAnlam}"
-                                                TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
-                                                                            Dark={StaticResource TextDark}}" />
-                                            <Label
-                                                Grid.Row="1"
-                                                FontAttributes="Italic"
-                                                FontSize="{StaticResource FontSizeSmall}"
-                                                Text="{Binding TurkceAnlam}"
-                                                TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
-                                                                            Dark={StaticResource SubTitleTextDark}}" />
-                                        </Grid>
-                                        <Button
-                                            x:Name="removeButton"
-                                            Grid.Column="1"
-                                            Clicked="removeButton_Clicked"
-                                            FontSize="12"
-                                            HorizontalOptions="End"
-                                            Style="{StaticResource TransparentButtonStyle}"
-                                            Text="{StaticResource FontAwesomeCloseIcon}"
-                                            TextColor="{StaticResource PrimaryRed}"
-                                            WidthRequest="40" />
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Padding="20,10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="{StaticResource FontSizeRegular}"
+                                            Text="{Binding KaracaycaAnlam}"
+                                            TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
+                                                                        Dark={StaticResource TextDark}}" />
+                                        <Label
+                                            Grid.Row="1"
+                                            FontAttributes="Italic"
+                                            FontSize="{StaticResource FontSizeSmall}"
+                                            Text="{Binding TurkceAnlam}"
+                                            TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
+                                                                        Dark={StaticResource SubTitleTextDark}}" />
                                     </Grid>
-                                </ViewCell.View>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-
-            </Frame>
+                                    <Button
+                                        x:Name="removeButton"
+                                        Grid.Column="1"
+                                        Clicked="removeButton_Clicked"
+                                        FontSize="12"
+                                        HorizontalOptions="End"
+                                        Style="{StaticResource TransparentButtonStyle}"
+                                        Text="{StaticResource FontAwesomeCloseIcon}"
+                                        TextColor="{StaticResource PrimaryRed}"
+                                        WidthRequest="40" />
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
             <ActivityIndicator
                 HorizontalOptions="Center"

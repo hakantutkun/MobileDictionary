@@ -8,7 +8,9 @@
     <!--  TabHostView Style  -->
     <Style x:Key="TabHostViewStyle" TargetType="{x:Type tabs:TabHostView}">
         <Setter Property="Margin" Value="0" />
-        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource TabViewBackgroundLight}, Dark={StaticResource TabViewBackgroundDark}}" />
+        <!--<Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource TabViewBackgroundLight}, Dark={StaticResource TabViewBackgroundDark}}" />-->
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource PageBackgroundColorLight}, Dark={StaticResource PageBackgroundColorDark}}" />
+
         <Setter Property="xct:ShadowEffect.Color" Value="Black" />
         <Setter Property="xct:ShadowEffect.Radius" Value="10" />
         <Setter Property="HeightRequest" Value="60" />
