@@ -1,9 +1,5 @@
 ﻿using MobileDictionary.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -26,7 +22,7 @@ namespace MobileDictionary.Pages
                     radioLight.IsChecked = true;
                     break;
                 case 2:
-                    RadioDark.IsChecked = true;
+                    radioDark.IsChecked = true;
                     break;
             }
         }
@@ -39,6 +35,9 @@ namespace MobileDictionary.Pages
         private void RadioSystemTapped(object sender, EventArgs e)
         {
             radioSystem.IsChecked = true;
+            radioLight.IsChecked = false;
+            radioDark.IsChecked = false;
+
             Settings.Theme = 0;
 
             TheTheme.SetTheme();
@@ -47,6 +46,8 @@ namespace MobileDictionary.Pages
         private void RadioLightTapped(object sender, EventArgs e)
         {
             radioLight.IsChecked = true;
+            radioSystem.IsChecked = false;
+            radioDark.IsChecked = false;
             Settings.Theme = 1;
 
             TheTheme.SetTheme();
@@ -54,28 +55,9 @@ namespace MobileDictionary.Pages
 
         private void RadioDarkTapped(object sender, EventArgs e)
         {
-            RadioDark.IsChecked = true;
-            Settings.Theme = 2;
-
-            TheTheme.SetTheme();
-        }
-
-        private void radioSystem_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-            Settings.Theme = 0;
-
-            TheTheme.SetTheme();
-        }
-
-        private void radioLight_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-            Settings.Theme = 1;
-
-            TheTheme.SetTheme();
-        }
-
-        private void RadioDark_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
+            radioDark.IsChecked = true;
+            radioSystem.IsChecked = false;
+            radioLight.IsChecked = false;
             Settings.Theme = 2;
 
             TheTheme.SetTheme();
