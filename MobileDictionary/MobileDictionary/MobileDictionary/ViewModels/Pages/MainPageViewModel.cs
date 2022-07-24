@@ -74,6 +74,8 @@ namespace MobileDictionary.ViewModels.Pages
             FavouritesViewModel = FavouritesViewModel.Instance;
             SearchViewModel = SearchViewModel.Instance;
             HistoryViewModel = HistoryViewModel.Instance;
+
+            SelectedViewModelIndex = 1;
         }
     }
 }
