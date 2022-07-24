@@ -26,8 +26,7 @@
         <Setter Property="xct:ShadowEffect.Radius" Value="4" />
         <Setter Property="xct:ShadowEffect.Opacity" Value=".4" />
         <Setter Property="CornerRadius" Value="26" />
-        <!--<Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightPancakeBg}, Dark={StaticResource DarkPancakeBg}}" />-->
-        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource PageBackgroundColorLight}, Dark={StaticResource PageBackgroundColorDark}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightPancakeBg}, Dark={StaticResource PageBackgroundColorDark}}" />
 
     </Style>
 
