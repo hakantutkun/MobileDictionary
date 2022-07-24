@@ -169,6 +169,9 @@ namespace MobileDictionary.ViewModels.Pages
                 // If saved, remove word
                 SelectedWord.IsFav = 0;
 
+                // Set Search time
+                SelectedWord.SearchTime = DateTime.Now.ToString();
+
                 // Update removed word
                 await DBService.UpdateWord(SelectedWord);
 
@@ -186,6 +189,9 @@ namespace MobileDictionary.ViewModels.Pages
             {
                 // Set the word as saved
                 SelectedWord.IsFav = 1;
+
+                // Set Search time
+                SelectedWord.SearchTime = DateTime.Now.ToString();
 
                 // Set the wword's favourite time to current time
                 SelectedWord.FavTime = DateTime.Now.ToString();
