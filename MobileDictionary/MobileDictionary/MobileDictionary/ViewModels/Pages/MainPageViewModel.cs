@@ -41,6 +41,31 @@ namespace MobileDictionary.ViewModels.Pages
             set { _searchViewModel = value; OnPropertyChanged(nameof(SearchViewModel)); }
         }
 
+        private int _selectedViewModelIndex;
+
+        public int SelectedViewModelIndex
+        {
+            get { return _selectedViewModelIndex; }
+            set 
+            {
+                _selectedViewModelIndex = value; 
+                OnPropertyChanged(nameof(SelectedViewModelIndex));
+
+                switch (value)
+                {
+                    case 0:
+                        HistoryViewModel.Instance.IsActive = true;
+                        break;
+                    case 1:
+                        SearchViewModel.Instance.IsActive = true;
+                        break;
+                    case 2:
+                        FavouritesViewModel.Instance.IsActive = true;
+                        break;
+                }
+            }
+        }
+
         #endregion
 
         public MainPageViewModel()

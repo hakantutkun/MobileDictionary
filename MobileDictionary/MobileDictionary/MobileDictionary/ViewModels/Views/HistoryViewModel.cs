@@ -72,6 +72,23 @@ namespace MobileDictionary.ViewModels.Views
             set { _detailPageViewModel = value; OnPropertyChanged(nameof(DetailPageViewModel)); }
         }
 
+        /// <summary>
+        /// States if this view currently displaying
+        /// </summary>
+        private bool _isActive;
+
+        public bool IsActive
+        {
+            get { return _isActive; }
+            set 
+            { 
+                _isActive = value; 
+                OnPropertyChanged(nameof(IsActive)); 
+                if(value) GetWords();
+            }
+        }
+
+
         #endregion
 
         #region Commands
