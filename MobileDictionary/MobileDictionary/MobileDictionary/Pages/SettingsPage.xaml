@@ -43,7 +43,7 @@
                                             Dark={StaticResource SubTitleTextDark}}" />
 
             <!--  Theme buttons grid  -->
-            <Grid Margin="40,10">
+            <Grid Margin="40,10" RadioButtonGroup.GroupName="Theme">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
@@ -88,9 +88,10 @@
                         Margin="0,10,10,0"
                         BackgroundColor="Transparent"
                         BorderColor="White"
+                        CheckedChanged="radioSystem_CheckedChanged"
                         GroupName="Theme"
                         HorizontalOptions="End"
-                        IsChecked="True"
+                        IsChecked="{Binding SystemThemeChecked}"
                         VerticalOptions="Start" />
                 </Grid>
 
@@ -131,8 +132,10 @@
                         Margin="0,10,10,0"
                         BackgroundColor="Transparent"
                         BorderColor="White"
+                        CheckedChanged="radioLight_CheckedChanged"
                         GroupName="Theme"
                         HorizontalOptions="End"
+                        IsChecked="{Binding LightThemeChecked}"
                         TextColor="White"
                         VerticalOptions="Start" />
                 </Grid>
@@ -172,8 +175,10 @@
                     <RadioButton
                         x:Name="radioDark"
                         Margin="0,10,10,0"
+                        CheckedChanged="radioDark_CheckedChanged"
                         GroupName="Theme"
                         HorizontalOptions="End"
+                        IsChecked="{Binding DarkThemeChecked}"
                         VerticalOptions="Start" />
                 </Grid>
 

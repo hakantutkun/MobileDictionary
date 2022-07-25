@@ -1,4 +1,5 @@
 ﻿using MobileDictionary.Helpers;
+using MobileDictionary.ViewModels.Pages;
 using System;
 
 using Xamarin.Forms;
@@ -13,18 +14,7 @@ namespace MobileDictionary.Pages
         {
             InitializeComponent();
 
-            switch (Settings.Theme)
-            {
-                case 0:
-                    radioSystem.IsChecked = true;
-                    break;
-                case 1:
-                    radioLight.IsChecked = true;
-                    break;
-                case 2:
-                    radioDark.IsChecked = true;
-                    break;
-            }
+            BindingContext = SettingsViewModel.Instance;
         }
 
         private async void BackButton_Clicked(object sender, EventArgs e)
@@ -61,6 +51,43 @@ namespace MobileDictionary.Pages
             Settings.Theme = 2;
 
             TheTheme.SetTheme();
+        }
+
+        private void radioSystem_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            var element = (RadioButton)sender;
+
+            if (element.IsChecked)
+            {
+                radioSystem.IsChecked = true;
+                Settings.Theme = 0;
+                TheTheme.SetTheme();
+            }
+        }
+
+        private void radioLight_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            var element = (RadioButton)sender;
+
+            if (element.IsChecked)
+            {
+                radioLight.IsChecked = true;
+                Settings.Theme = 1;
+                TheTheme.SetTheme();
+            }
+        }
+
+
+        private void radioDark_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            var element = (RadioButton)sender;
+
+            if (element.IsChecked)
+            {
+                radioDark.IsChecked = true;
+                Settings.Theme = 2;
+                TheTheme.SetTheme();
+            }
         }
     }
 }
