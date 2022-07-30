@@ -36,61 +36,55 @@
         <!--  Content Grid  -->
         <Grid Grid.Row="1">
 
-            <Frame
-                Margin="30,20,30,85"
-                Style="{StaticResource PancakeStyle}"
-                VerticalOptions="Start">
+            <!--  Word List View  -->
+            <ListView
+                x:Name="wordListView"
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="true"
+                IsVisible="{Binding ListViewVisibility}"
+                ItemTapped="wordListView_ItemTapped"
+                ItemsSource="{Binding WordList}"
+                SeparatorColor="{AppThemeBinding Light=#d6d6d6,
+                                                 Dark=#474747}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
 
-                <!--  Word List View  -->
-                <ListView
-                    x:Name="wordListView"
-                    CachingStrategy="RecycleElement"
-                    HasUnevenRows="true"
-                    IsVisible="{Binding ListViewVisibility}"
-                    ItemTapped="wordListView_ItemTapped"
-                    ItemsSource="{Binding WordList}"
-                    SeparatorColor="{AppThemeBinding Light=#d6d6d6,
-                                                     Dark=#474747}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.View>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="Auto" />
-                                        </Grid.ColumnDefinitions>
+                                    <Grid Padding="20,10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
 
-                                        <Grid Padding="20,10">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="*" />
-                                                <RowDefinition Height="*" />
-                                            </Grid.RowDefinitions>
+                                        <!--  Word Label  -->
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="{StaticResource FontSizeRegular}"
+                                            Text="{Binding KaracaycaAnlam}"
+                                            TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
+                                                                        Dark={StaticResource TextDark}}" />
 
-                                            <!--  Word Label  -->
-                                            <Label
-                                                FontAttributes="Bold"
-                                                FontSize="{StaticResource FontSizeRegular}"
-                                                Text="{Binding KaracaycaAnlam}"
-                                                TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
-                                                                            Dark={StaticResource TextDark}}" />
-
-                                            <!--  Meaning Label  -->
-                                            <Label
-                                                Grid.Row="1"
-                                                FontAttributes="Italic"
-                                                FontSize="{StaticResource FontSizeSmall}"
-                                                Text="{Binding TurkceAnlam}"
-                                                TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
-                                                                            Dark={StaticResource SubTitleTextDark}}" />
-                                        </Grid>
+                                        <!--  Meaning Label  -->
+                                        <Label
+                                            Grid.Row="1"
+                                            FontAttributes="Italic"
+                                            FontSize="{StaticResource FontSizeSmall}"
+                                            Text="{Binding TurkceAnlam}"
+                                            TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
+                                                                        Dark={StaticResource SubTitleTextDark}}" />
                                     </Grid>
-                                </ViewCell.View>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Frame>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
             <!--  Loading Indicator  -->
             <ActivityIndicator
