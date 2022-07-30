@@ -52,7 +52,7 @@ namespace MobileDictionary
         protected override bool OnBackButtonPressed()
         {
             // Check if search bar emty
-            if (MainPageViewModel.Instance.SearchViewModel.SearchText.Length != 0)
+            if (!string.IsNullOrEmpty(MainPageViewModel.Instance.SearchViewModel.SearchText))
             {
                 // If not, clear search bar and do not close app.
                 MainPageViewModel.Instance.SearchViewModel.SearchText = string.Empty;
