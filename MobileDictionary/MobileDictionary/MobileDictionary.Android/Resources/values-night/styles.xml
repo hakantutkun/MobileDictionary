@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+	<style name="MainTheme" parent="MainTheme.Base">
+		<!--Prevents color changes when phone is light mode but system theme is dark...-->
+		<item name="android:forceDarkAllowed">false</item>
+		<item name="android:windowTranslucentStatus">true</item>
+		<!--To disable list view tapped background color-->
+		<item name="android:colorActivatedHighlight">@android:color/transparent</item>
+		<item name="android:textAllCaps">false</item>
+		<item name="android:windowBackground">@drawable/launch_screen_night</item>
+		<item name="android:navigationBarColor">@color/navBarColor</item>
+	</style>
+</resources>

@@ -4,5 +4,6 @@
     <SelectedDevice>Xiaomi M2101K6G</SelectedDevice>
     <ActiveDebugProfile>Xiaomi M2101K6G</ActiveDebugProfile>
     <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
 </Project>
