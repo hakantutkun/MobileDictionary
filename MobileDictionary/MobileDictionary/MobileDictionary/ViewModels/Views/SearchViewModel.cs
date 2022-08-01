@@ -3,9 +3,11 @@ using MobileDictionary.Models;
 using MobileDictionary.Services;
 using MobileDictionary.ViewModels.Base;
 using MobileDictionary.ViewModels.Pages;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -149,6 +151,7 @@ namespace MobileDictionary.ViewModels.Views
             set
             {
                 _isActive = value;
+                Task.Run(async () => { await SetFade(value); });
                 OnPropertyChanged(nameof(IsActive));
             }
         }

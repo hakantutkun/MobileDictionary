@@ -4,104 +4,112 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <!--  Main Grid  -->
-    <Grid RowDefinitions="2*,5*" Style="{StaticResource MainGridStyle}">
+    <Grid>
+        <!--  Main Grid  -->
+        <Grid RowDefinitions="2*,5*" Style="{StaticResource MainGridStyle}">
 
-        <!--  Overlay Boxview  -->
-        <!--  Added for overlaying corner radius of frame  -->
-        <BoxView
-            Margin="0"
-            BackgroundColor="{AppThemeBinding Light={StaticResource PageBackgroundColorLight},
-                                              Dark={StaticResource PageBackgroundColorDark}}"
-            HeightRequest="100"
-            VerticalOptions="Start" />
+            <!--  Overlay Boxview  -->
+            <!--  Added for overlaying corner radius of frame  -->
+            <BoxView
+                Margin="0"
+                BackgroundColor="{AppThemeBinding Light={StaticResource PageBackgroundColorLight},
+                                                  Dark={StaticResource PageBackgroundColorDark}}"
+                HeightRequest="100"
+                VerticalOptions="Start" />
 
-        <!--  Top Frame  -->
-        <Frame Grid.Row="0" Style="{StaticResource TopFrameStyle}">
+            <!--  Top Frame  -->
+            <Frame Grid.Row="0" Style="{StaticResource TopFrameStyle}">
 
-            <StackLayout Grid.Row="0" VerticalOptions="CenterAndExpand">
+                <StackLayout Grid.Row="0" VerticalOptions="CenterAndExpand">
 
-                <!--  Page Title  -->
-                <Label Style="{StaticResource TitleStyle}" Text="Geçmiş Aramalar" />
+                    <!--  Page Title  -->
+                    <Label Style="{StaticResource TitleStyle}" Text="Geçmiş Aramalar" />
 
-                <!--  Page Subtitle  -->
-                <Label Style="{StaticResource SubTitleStyle}" Text="Geçmiş aramaları listeleyin..." />
+                    <!--  Page Subtitle  -->
+                    <Label Style="{StaticResource SubTitleStyle}" Text="Geçmiş aramaları listeleyin..." />
 
-                <!--  Delete History Button  -->
-                <Button
-                    Command="{Binding DeleteHistoryCommand}"
-                    Style="{StaticResource ClearButton}"
-                    Text="Tümünü Temizle" />
+                    <!--  Delete History Button  -->
+                    <Button
+                        Command="{Binding DeleteHistoryCommand}"
+                        Style="{StaticResource ClearButton}"
+                        Text="Tümünü Temizle" />
 
 
-            </StackLayout>
-        </Frame>
+                </StackLayout>
+            </Frame>
 
-        <Grid Grid.Row="1">
+            <Grid Grid.Row="1">
 
-            <ListView
-                x:Name="wordListView"
-                CachingStrategy="RecycleElement"
-                HasUnevenRows="true"
-                IsVisible="{Binding ListViewVisibility}"
-                ItemTapped="wordListView_ItemTapped"
-                ItemsSource="{Binding HistoryList}"
-                SeparatorColor="{AppThemeBinding Light=#d6d6d6,
-                                                 Dark=#474747}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <Grid>
+                <ListView
+                    x:Name="wordListView"
+                    CachingStrategy="RecycleElement"
+                    HasUnevenRows="true"
+                    IsVisible="{Binding ListViewVisibility}"
+                    ItemTapped="wordListView_ItemTapped"
+                    ItemsSource="{Binding HistoryList}"
+                    SeparatorColor="{AppThemeBinding Light=#d6d6d6,
+                                                     Dark=#474747}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
 
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid Padding="20,10">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*" />
-                                            <RowDefinition Height="*" />
-                                        </Grid.RowDefinitions>
-                                        <Label
-                                            FontAttributes="Bold"
-                                            FontSize="{StaticResource FontSizeRegular}"
-                                            Text="{Binding KaracaycaAnlam}"
-                                            TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
-                                                                        Dark={StaticResource TextDark}}" />
-                                        <Label
-                                            Grid.Row="1"
-                                            FontAttributes="Italic"
-                                            FontSize="{StaticResource FontSizeSmall}"
-                                            Text="{Binding TurkceAnlam}"
-                                            TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
-                                                                        Dark={StaticResource SubTitleTextDark}}" />
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Padding="20,10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Label
+                                                FontAttributes="Bold"
+                                                FontSize="{StaticResource FontSizeRegular}"
+                                                Text="{Binding KaracaycaAnlam}"
+                                                TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
+                                                                            Dark={StaticResource TextDark}}" />
+                                            <Label
+                                                Grid.Row="1"
+                                                FontAttributes="Italic"
+                                                FontSize="{StaticResource FontSizeSmall}"
+                                                Text="{Binding TurkceAnlam}"
+                                                TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
+                                                                            Dark={StaticResource SubTitleTextDark}}" />
+                                        </Grid>
+                                        <Button
+                                            x:Name="removeButton"
+                                            Grid.Column="1"
+                                            Clicked="removeButton_Clicked"
+                                            FontSize="12"
+                                            HorizontalOptions="End"
+                                            Style="{StaticResource TransparentButtonStyle}"
+                                            Text="{StaticResource FontAwesomeCloseIcon}"
+                                            TextColor="{StaticResource PrimaryRed}"
+                                            WidthRequest="40" />
                                     </Grid>
-                                    <Button
-                                        x:Name="removeButton"
-                                        Grid.Column="1"
-                                        Clicked="removeButton_Clicked"
-                                        FontSize="12"
-                                        HorizontalOptions="End"
-                                        Style="{StaticResource TransparentButtonStyle}"
-                                        Text="{StaticResource FontAwesomeCloseIcon}"
-                                        TextColor="{StaticResource PrimaryRed}"
-                                        WidthRequest="40" />
-                                </Grid>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-            <ActivityIndicator
-                HorizontalOptions="Center"
-                IsRunning="{Binding SpinnerRunning}"
-                VerticalOptions="Center"
-                Color="{AppThemeBinding Light={StaticResource PrimaryGray},
-                                        Dark={StaticResource TextDark}}" />
+                <ActivityIndicator
+                    HorizontalOptions="Center"
+                    IsRunning="{Binding SpinnerRunning}"
+                    VerticalOptions="Center"
+                    Color="{AppThemeBinding Light={StaticResource PrimaryGray},
+                                            Dark={StaticResource TextDark}}" />
+            </Grid>
         </Grid>
 
+        <BoxView
+            x:Name="FadeBox"
+            InputTransparent="True"
+            Opacity="{Binding FadeOpacity}"
+            Color="{AppThemeBinding Light={StaticResource FadeLight},
+                                    Dark={StaticResource FadeDark}}" />
     </Grid>
 
 </ContentView>

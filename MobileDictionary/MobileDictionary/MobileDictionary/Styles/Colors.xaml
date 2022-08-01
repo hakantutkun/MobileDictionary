@@ -35,6 +35,9 @@
     <Color x:Key="TextDark">#cccccc</Color>
     <Color x:Key="PrimaryGray">#444444</Color>
 
+    <Color x:Key="FadeDark">#000000</Color>
+    <Color x:Key="FadeLight">#FFFFFF</Color>
+
 
     <Color x:Key="PlaceHolderDark">#707070</Color>
 

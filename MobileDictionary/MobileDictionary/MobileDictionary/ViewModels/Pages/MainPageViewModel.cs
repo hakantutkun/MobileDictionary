@@ -54,12 +54,18 @@ namespace MobileDictionary.ViewModels.Pages
                 switch (value)
                 {
                     case 0:
+                        SearchViewModel.Instance.IsActive = false;
+                        FavouritesViewModel.Instance.IsActive = false;
                         HistoryViewModel.Instance.IsActive = true;
                         break;
                     case 1:
+                        HistoryViewModel.Instance.IsActive = false;
+                        FavouritesViewModel.Instance.IsActive = false;
                         SearchViewModel.Instance.IsActive = true;
                         break;
                     case 2:
+                        HistoryViewModel.Instance.IsActive = false;
+                        SearchViewModel.Instance.IsActive = false;
                         FavouritesViewModel.Instance.IsActive = true;
                         break;
                 }

@@ -83,8 +83,10 @@ namespace MobileDictionary.ViewModels.Views
             get { return _isActive; }
             set
             {
+
                 _isActive = value;
                 OnPropertyChanged(nameof(IsActive));
+                Task.Run(async () => { await SetFade(value); });
                 if (value) GetWords();
             }
         }
