@@ -106,6 +106,17 @@ namespace MobileDictionary.ViewModels.Views
         }
 
         /// <summary>
+        /// A flag that controls exclamation visibility
+        /// </summary>
+        private bool _exclamationMarkVisibility = false;
+
+        public bool ExclamationMarkVisibility
+        {
+            get { return _exclamationMarkVisibility; }
+            set { _exclamationMarkVisibility = value; OnPropertyChanged(nameof(ExclamationMarkVisibility)); }
+        }
+
+        /// <summary>
         /// The list that keeps search results
         /// </summary>
         private ObservableCollection<Kelime> _searchResultList;
@@ -196,6 +207,9 @@ namespace MobileDictionary.ViewModels.Views
             // Show search button.
             SearchButtonVisibility = true;
 
+            // Hide exclamation.
+            ExclamationMarkVisibility = false;
+
             // Hide close button.
             CloseButtonVisibility = false;
 
@@ -230,8 +244,19 @@ namespace MobileDictionary.ViewModels.Views
                 // Update search result list.
                 SearchResultList = new ObservableCollection<Kelime>(returnList);
 
-                // Show listview.
-                ListViewVisibility = true;
+                if (returnList.Count > 0)
+                {
+                    // Hide exclamation.
+                    ExclamationMarkVisibility = false;
+
+                    // Show listview.
+                    ListViewVisibility = true;
+                }
+                else
+                {
+                    // Show exclamation.
+                    ExclamationMarkVisibility = true;
+                }
 
                 // Hide search button.
                 SearchButtonVisibility = false;
@@ -243,6 +268,9 @@ namespace MobileDictionary.ViewModels.Views
             {
                 // Show search button.
                 SearchButtonVisibility = true;
+
+                // Hide exclamation.
+                ExclamationMarkVisibility = false;
 
                 // Clear complete text
                 SearchCompleteText = string.Empty;

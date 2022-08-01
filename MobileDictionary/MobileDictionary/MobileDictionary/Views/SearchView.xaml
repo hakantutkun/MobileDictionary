@@ -118,73 +118,92 @@
 
 
         <StackLayout Grid.Row="1">
-            <ListView
-                x:Name="wordListView"
-                HasUnevenRows="true"
-                HeightRequest="300"
-                IsVisible="{Binding ListViewVisibility}"
-                ItemSelected="wordListView_ItemSelected"
-                ItemsSource="{Binding SearchResultList}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View BackgroundColor="{TemplateBinding BackgroundColor}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Label
-                                        Grid.Column="0"
-                                        Margin="20,0,5,0"
-                                        FontFamily="FontAwesomeSolid"
-                                        FontSize="22"
-                                        HorizontalOptions="Start"
-                                        Text="{StaticResource FontAwesomeSearchIcon}"
-                                        TextColor="{StaticResource ButtonColorLight}"
-                                        VerticalOptions="Center" />
-                                    <Grid
-                                        Grid.Column="1"
-                                        Padding="0,10"
-                                        RowSpacing="0">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*" />
-                                            <RowDefinition Height="*" />
-                                        </Grid.RowDefinitions>
+            <Grid>
+                <StackLayout IsVisible="{Binding ExclamationMarkVisibility}">
+                    <Image
+                        Margin="10,10,10,0"
+                        HeightRequest="70"
+                        HorizontalOptions="Center"
+                        IsVisible="{Binding IsExclamationVisible}"
+                        Source="exclamation.png"
+                        VerticalOptions="Center"
+                        WidthRequest="70" />
+                    <Label
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource ExclamationText}"
+                        Text="Aradığınız kelime bulunamadı!"
+                        VerticalOptions="Center" />
+                </StackLayout>
+
+                <ListView
+                    x:Name="wordListView"
+                    HasUnevenRows="true"
+                    HeightRequest="300"
+                    IsVisible="{Binding ListViewVisibility}"
+                    ItemSelected="wordListView_ItemSelected"
+                    ItemsSource="{Binding SearchResultList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View BackgroundColor="{TemplateBinding BackgroundColor}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
                                         <Label
-                                            FontAttributes="Bold"
-                                            FontFamily="OpenSansBold"
-                                            FontSize="14"
-                                            Text="{Binding KaracaycaAnlam}"
-                                            TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
-                                                                        Dark={StaticResource TextDark}}" />
-                                        <Label
-                                            Grid.Row="1"
-                                            Margin="-5,0,0,0"
-                                            FontAttributes="Italic"
-                                            FontFamily="OpenSansMediumItalic"
-                                            FontSize="13"
-                                            Text="{Binding TurkceAnlam}"
-                                            TextColor="{AppThemeBinding Light={StaticResource ButtonColorLight},
-                                                                        Dark={StaticResource SubTitleTextDark}}"
-                                            VerticalOptions="Start" />
+                                            Grid.Column="0"
+                                            Margin="20,0,5,0"
+                                            FontFamily="FontAwesomeSolid"
+                                            FontSize="22"
+                                            HorizontalOptions="Start"
+                                            Text="{StaticResource FontAwesomeSearchIcon}"
+                                            TextColor="{StaticResource ButtonColorLight}"
+                                            VerticalOptions="Center" />
+                                        <Grid
+                                            Grid.Column="1"
+                                            Padding="0,10"
+                                            RowSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Label
+                                                FontAttributes="Bold"
+                                                FontFamily="OpenSansBold"
+                                                FontSize="14"
+                                                Text="{Binding KaracaycaAnlam}"
+                                                TextColor="{AppThemeBinding Light={StaticResource PrimaryBlack},
+                                                                            Dark={StaticResource TextDark}}" />
+                                            <Label
+                                                Grid.Row="1"
+                                                Margin="-5,0,0,0"
+                                                FontAttributes="Italic"
+                                                FontFamily="OpenSansMediumItalic"
+                                                FontSize="13"
+                                                Text="{Binding TurkceAnlam}"
+                                                TextColor="{AppThemeBinding Light={StaticResource ButtonColorLight},
+                                                                            Dark={StaticResource SubTitleTextDark}}"
+                                                VerticalOptions="Start" />
+                                        </Grid>
+                                        <Button
+                                            Grid.Column="1"
+                                            FontSize="16"
+                                            HorizontalOptions="End"
+                                            IsVisible="False"
+                                            Style="{StaticResource TransparentButtonStyle}"
+                                            Text="{StaticResource FontAwesomeBulletIcon}"
+                                            TextColor="{StaticResource ButtonColorLight}"
+                                            WidthRequest="40" />
                                     </Grid>
-                                    <Button
-                                        Grid.Column="1"
-                                        FontSize="16"
-                                        HorizontalOptions="End"
-                                        IsVisible="False"
-                                        Style="{StaticResource TransparentButtonStyle}"
-                                        Text="{StaticResource FontAwesomeBulletIcon}"
-                                        TextColor="{StaticResource ButtonColorLight}"
-                                        WidthRequest="40" />
-                                </Grid>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
 
             <StackLayout IsVisible="{Binding SearchButtonVisibility}">
 
