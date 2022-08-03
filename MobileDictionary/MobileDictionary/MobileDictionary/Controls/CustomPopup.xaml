@@ -3,7 +3,7 @@
     x:Class="MobileDictionary.Controls.CustomPopup"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Grid>
+    <Grid x:Name="MainGrid">
 
         <!--  Background light dimming effect  -->
         <Grid BackgroundColor="#000000" Opacity=".7" />
@@ -44,6 +44,7 @@
                 <Button
                     Margin="0,20,0,10"
                     Command="{Binding ClosePopupCommand}"
+                    Clicked="Button_Clicked"
                     Style="{StaticResource ClearButton}"
                     Text="Tamam"
                     VerticalOptions="End" />

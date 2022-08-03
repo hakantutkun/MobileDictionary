@@ -89,7 +89,7 @@
                         <Button
                             BackgroundColor="{StaticResource PrimaryRed}"
                             Command="{Binding SaveCommand}"
-                            IsVisible="{Binding IsFav}"
+                            IsVisible="{Binding SelectedWord.IsFav}"
                             Style="{StaticResource WordCardButton}"
                             Text="{StaticResource FontAwesomeBookmarkIcon}" />
 

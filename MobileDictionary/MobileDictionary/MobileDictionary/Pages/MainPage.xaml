@@ -3,6 +3,7 @@
     x:Class="MobileDictionary.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:MobileDictionary.Controls"
     xmlns:customViews="clr-namespace:Sharpnado.Presentation.Forms.CustomViews;assembly=Sharpnado.Presentation.Forms"
     xmlns:tabs="clr-namespace:Sharpnado.Presentation.Forms.CustomViews.Tabs;assembly=Sharpnado.Presentation.Forms"
     xmlns:views="clr-namespace:MobileDictionary.Views"
@@ -50,5 +51,7 @@
                     Style="{StaticResource DefaultTabStyle}" />
             </tabs:TabHostView.Tabs>
         </tabs:TabHostView>
+
+        <controls:CustomPopup IsVisible="{Binding CustomPopupVisibility}" />
     </Grid>
 </ContentPage>

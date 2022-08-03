@@ -1,11 +1,12 @@
 ﻿using SQLite;
+using System.ComponentModel;
 
 namespace MobileDictionary.Models
 {
     /// <summary>
     /// Default summary for Kelime.cs
     /// </summary>
-    public class Kelime
+    public class Kelime : INotifyPropertyChanged
     {
         /// <summary>
         /// The id of the word
@@ -36,12 +37,27 @@ namespace MobileDictionary.Models
         /// <summary>
         /// A flag that controls if the word has been saved as favourite word.
         /// </summary>
-        public long IsFav { get; set; }
+        private long _isFav;
+
+        public long IsFav
+        {
+            get { return _isFav; }
+            set { _isFav = value; OnPropertyChanged(nameof(IsFav)); }
+        }
+
 
         /// <summary>
         /// Favourite addition time
         /// </summary>
         public string FavTime { get; set; }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(propertyName, new PropertyChangedEventArgs(propertyName));
+        }
 
     }
 }

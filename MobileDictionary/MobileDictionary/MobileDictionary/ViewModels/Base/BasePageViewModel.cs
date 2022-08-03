@@ -12,6 +12,9 @@ namespace MobileDictionary.ViewModels.Base
     {
         #region Properties
 
+        public delegate void PopupVisibilityChangedDelegate(bool state);
+        public event PopupVisibilityChangedDelegate PopupVisibilityChangedEvent;
+
         /// <summary>
         /// A flag that controls custom popup visibility of the page
         /// </summary>
@@ -20,7 +23,12 @@ namespace MobileDictionary.ViewModels.Base
         public bool CustomPopupVisibility
         {
             get { return _customPopupVisibility; }
-            set { _customPopupVisibility = value; OnPropertyChanged(nameof(CustomPopupVisibility)); }
+            set 
+            { 
+                _customPopupVisibility = value; 
+                OnPropertyChanged(nameof(CustomPopupVisibility));
+                PopupVisibilityChangedEvent(value);
+            }
         }
 
         /// <summary>
@@ -90,7 +98,7 @@ namespace MobileDictionary.ViewModels.Base
         /// <param name="obj"></param>
         private void ClosePopup()
         {
-            CustomPopupVisibility = false;
+            //CustomPopupVisibility = false;
         }
 
     }
