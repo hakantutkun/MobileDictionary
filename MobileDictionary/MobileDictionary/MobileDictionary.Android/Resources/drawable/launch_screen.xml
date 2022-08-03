@@ -9,7 +9,7 @@
 	<item android:tileMode="disabled"
 		  android:gravity="fill">
 		<shape android:shape="rectangle">
-			<solid android:color="#FF0000"/>
+			<solid android:color="#EA0025"/>
 		</shape>
 	</item>
 
